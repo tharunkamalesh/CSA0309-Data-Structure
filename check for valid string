@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <ctype.h>   // for isalpha() and isdigit()
+
+int isValidString(char str[]) {
+    int i = 0;
+    while (str[i] != '\0') {   // loop until end of string
+        if (!(isalpha(str[i]) || isdigit(str[i]))) {
+            return 0;  // invalid if not letter or digit
+        }
+        i++;
+    }
+    return 1;  // valid
+}
+
+int main() {
+    char str[100];
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    if (isValidString(str)) {
+        printf("Valid string\n");
+    } else {
+        printf("Invalid string\n");
+    }
+    return 0;
+}
