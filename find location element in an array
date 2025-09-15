@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    int n, i, element;
+    int arr[100];
+
+    // Input size of array
+    printf("Enter the size of the array: ");
+    scanf("%d", &n);
+
+    // Input array elements
+    printf("Enter the elements of the array: ");
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Input element to search
+    printf("Enter the element to find: ");
+    scanf("%d", &element);
+
+    // Linear search to find location
+    int found = 0;
+    for(i = 0; i < n; i++) {
+        if(arr[i] == element) {
+            printf("Element %d found at position %d.\n", element, i + 1); // position starts from 1
+            found = 1;
+            break; // remove this if you want all occurrences
+        }
+    }
+
+    if(!found) {
+        printf("Element %d not found in the array.\n", element);
+    }
+
+    return 0;
+}
