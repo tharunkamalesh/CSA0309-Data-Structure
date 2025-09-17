@@ -1,0 +1,7 @@
+arr = [10, 20, 30, 40, 50, 60, 70]
+
+if len(arr) >= 5:
+    print("5th element:", arr[4])
+else:
+    print("Array has less than 5 elements")
+
