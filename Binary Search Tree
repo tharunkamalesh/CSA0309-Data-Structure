@@ -1,0 +1,36 @@
+class Node:
+    def __init__(self, key):
+        self.key = key
+        self.left = None
+        self.right = None
+
+def bst_search(root, key):
+    if root is None or root.key == key:
+        return root
+    if key < root.key:
+        return bst_search(root.left, key)
+    else:
+        return bst_search(root.right, key)
+
+def bst_min(root):
+    current = root
+    while current.left is not None:
+        current = current.left
+    return current
+
+def bst_max(root):
+    current = root
+    while current.right is not None:
+        current = current.right
+    return current
+
+# Example BST
+root = Node(10)
+root.left = Node(5)
+root.right = Node(15)
+root.left.left = Node(3)
+root.right.right = Node(20)
+
+print("Search 15:", bst_search(root, 15).key if bst_search(root, 15) else "Not found")
+print("Min element:", bst_min(root).key)
+print("Max element:", bst_max(root).key)
